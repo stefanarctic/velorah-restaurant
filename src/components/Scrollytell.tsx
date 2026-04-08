@@ -10,7 +10,9 @@ const SCROLL_VH = 500;
 const PARALLAX_MAX_PX = 28;
 
 function frameUrl(index: number): string {
-  return `/frames/frame-${String(index + 1).padStart(3, "0")}.jpg`;
+  const base = import.meta.env.BASE_URL;
+  const n = String(index + 1).padStart(3, "0");
+  return `${base}frames/ezgif-frame-${n}.jpg`;
 }
 
 function clamp(n: number, min: number, max: number): number {
